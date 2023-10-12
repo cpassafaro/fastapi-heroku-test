@@ -1,9 +1,12 @@
+beautifulsoup4
+bs4
 Click
 fastapi
 gunicorn
 h11
 httptools
 pydantic
+requests
 starlette
 uvicorn
 uvloop
