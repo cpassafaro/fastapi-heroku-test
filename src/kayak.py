@@ -94,6 +94,8 @@ def getAllKayaks():
     getBoatsFromColoradoKayak()
     getBoatsNA()
     getBoatsFromRutabaga()
+    print(boatlist)
     # can print directly to console if you remve boatlist from return and bring back print comment
     return boatlist
 
+getAllKayaks()
