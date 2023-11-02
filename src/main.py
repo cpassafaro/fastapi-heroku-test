@@ -1,6 +1,6 @@
 import socket
 import sys
-from kayak import *
+from src.kayak import *
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
