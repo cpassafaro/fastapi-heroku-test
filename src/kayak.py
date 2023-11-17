@@ -4,8 +4,9 @@ from bs4 import BeautifulSoup
 
 headers = {'User-Agent' : 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
 
+boatlist = []
 def getBoatsFromColoradoKayak():
-    boatlist = []
+    # boatlist = []
     url = 'https://coloradokayak.com/collections/whitewater-kayaks'
 
     r = requests.get(url, headers=headers)
@@ -36,7 +37,7 @@ def getBoatsFromColoradoKayak():
     return boatlist
 
 def getBoatsFromRutabaga():
-    boatlist = []
+    # boatlist = []
     url = 'https://www.rutabagashop.com/collections/kayaks-whitewater'
 
     r = requests.get(url, headers=headers)
@@ -61,7 +62,7 @@ def getBoatsFromRutabaga():
     return boatlist
 
 def getBoatsFromNextAdventure():
-    boatlist = []
+    # boatlist = []
     for x in range(0, 2):
         url = 'https://www.nextadventure.net/shop/paddle/kayaks/whitewater-kayaks?p={page}'
 
@@ -84,14 +85,8 @@ def getBoatsFromNextAdventure():
 
 
 def getAllKayaks():
-    finalBoatList = []
+    getBoatsFromRutabaga()
+    getBoatsFromColoradoKayak()
+    getBoatsFromNextAdventure()
 
-    rutabaga = getBoatsFromRutabaga()
-    coloradoKayaks = getBoatsFromColoradoKayak()
-    nextAdventure = getBoatsFromNextAdventure()
-
-    finalBoatList.append(rutabaga)
-    finalBoatList.append(coloradoKayaks)
-    finalBoatList.append(nextAdventure)
-    
-    return finalBoatList
+    return boatlist
