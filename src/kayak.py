@@ -46,6 +46,7 @@ def getBoatsFromRutabaga():
         starterUrl = 'https://www.rutabagashop.com/'
         brand = boat.find('a', {'class': 'product-item__vendor'}).text
         boatName = boat.find('a', {'class': 'product-item__title'}).text
+        imgElement = boat.find('img', {'class': 'product-item__primary-image'})
         link = boat.find('a', {'class': 'product-item__image-wrapper'})['href']
         price =  re.sub("\D", "", boat.find('span', {'class': 'price'}).text)
         finalPrice = price[:-2]
@@ -55,7 +56,8 @@ def getBoatsFromRutabaga():
             'by-ref': 'rutabaga-shop',
             'title': brand + ' ' + boatName,
             'link': starterUrl + link,
-            'price': finalPrice
+            'price': finalPrice,
+            'image': 'https:' + imgElement['data-src']
         }
         boatlist.append(boatObject)
     return boatlist
