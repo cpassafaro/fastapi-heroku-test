@@ -30,7 +30,7 @@ def getBoatsFromColoradoKayak():
                     'title': boat.find('a', {'class': 'product-item__title'}).text,
                     'link': productUrl,
                     'price': re.sub("\D", "", boat.find('span', {'class': 'price'}).text),
-                    'image': 'https::' + imgElement['data-src']
+                    'image': 'https:' + imgElement['data-src']
                 }
                 boatlist.append(boatObject)
     return boatlist
