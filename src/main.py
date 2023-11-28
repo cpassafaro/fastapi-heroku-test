@@ -41,7 +41,7 @@ def getAll():
 @app.get("/company/{name}")
 def getByCompany(name: str):
   if name == 'next-adventure':
-    return getBoatsNA()
+    return getBoatsFromNextAdventure()
   if name == 'colorado-kayak':
     return getBoatsFromColoradoKayak()
   if name == 'rutabaga-shop':
