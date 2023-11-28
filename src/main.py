@@ -11,6 +11,7 @@ origins = [
     "http://localhost",
     "http://localhost:3000",
     "http://localhost:8080",
+    "https://storied-piroshki-4c2db4.netlify.app"
 ]
 
 app.add_middleware(
