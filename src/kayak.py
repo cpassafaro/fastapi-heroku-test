@@ -20,7 +20,8 @@ def getBoatsFromColoradoKayak():
                 productUrl = url
                 actionButton = boat.find('button', {'class': 'product-item__action-button'})
                 imgElement = boat.find('img', {'class': 'product-item__primary-image'})
-
+                price = boat.find('span', {'class': 'price'}).text.split('$',)
+                
                 if actionButton.has_attr('data-product-url'): 
                     productUrl = url + actionButton['data-product-url']
 
@@ -29,7 +30,7 @@ def getBoatsFromColoradoKayak():
                     'by-ref': 'colorado-kayak',
                     'title': boat.find('a', {'class': 'product-item__title'}).text,
                     'link': productUrl,
-                    'price': re.sub("\D", "", boat.find('span', {'class': 'price'}).text),
+                    'price': price[1],
                     'image': 'https:' + imgElement['data-src']
                 }
                 boatlist.append(boatObject)
